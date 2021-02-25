@@ -1,24 +1,30 @@
+import { useContext } from 'react';
+import { ChallengesContext } from '../contexts/ChallengesContext';
 import styles from '../styles/components/ExperienceBar.module.css';
 
 export default function ExperienceBar() {
+  const { currentExperience, xpToNextLevel } = useContext(ChallengesContext);
+
+  const percentToNextLevel = Math.round(currentExperience*100) / xpToNextLevel;
+
   return (
     <header className={styles.experienceBar}>
       <span>0xp</span>
 
       <div>
-        <div style={{ width: "50%" }}>
+        <div style={{ width: `${percentToNextLevel}%` }}>
           <span
             className={styles.currentExperience}
-            style={{ left: "50%" }}
+            style={{ left: `${percentToNextLevel}%` }}
           >
-            300xp
+            {currentExperience}xp
           </span>
         </div>
         
-        <div className={styles.pointBar}/>
+        <div className={styles.pointBar} style={{ left: `${percentToNextLevel - 1.5}% ` }}/>
       </div>
 
-      <span>600xp</span>
+      <span>{xpToNextLevel}xp</span>
     </header>
   );
 }

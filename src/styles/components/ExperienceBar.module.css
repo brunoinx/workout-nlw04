@@ -6,7 +6,7 @@
 
 .experienceBar > div {
   flex: 1;
-  height: 4px;
+  height: 6px;
   border-radius: 8px;
   background: var(--gray-line);
   margin: 0 1rem;
@@ -14,20 +14,19 @@
 }
 
 .experienceBar > div > div {
-  height: 4px;
+  height: 6px;
   border-radius: 4px;
   background: var(--green);
 }
 
 .experienceBar div .pointBar {
-  height: 10px;
-  width: 10px;
-  border-radius: 8px;
+  height: 12px;
+  width: 12px;
+  border-radius: 20px;
   background-color: var(--green);
 
   position: absolute;
-  top: -65%;
-  left: 49.5%;
+  top: -50%;
 }
 
 span.currentExperience {
