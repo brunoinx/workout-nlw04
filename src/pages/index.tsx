@@ -7,29 +7,32 @@ import Countdown from "../components/Contdown";
 import ChallengeBox from "../components/ChallengeBox";
 
 import styles from "../styles/pages/Home.module.css";
+import { CountDownProvider } from '../contexts/CountdownContext';
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
         <title>
-          Início | workbreak.it
+          Home | Workout
         </title>
       </Head>
 
       <ExperienceBar />
 
-      <section>
-        <div>
-          <Profile />
-          <CompletedChallenges />
-          <Countdown />
-        </div>
-        
-        <div>
-          <ChallengeBox />
-        </div>
-      </section>
+      <CountDownProvider>
+        <section>
+          <div>
+            <Profile />
+            <CompletedChallenges />
+            <Countdown />
+          </div>
+          
+          <div>
+            <ChallengeBox />
+          </div>
+        </section>
+      </CountDownProvider>
     </div>
   )
 }

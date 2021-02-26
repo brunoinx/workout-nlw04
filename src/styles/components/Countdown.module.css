@@ -66,13 +66,11 @@
   background: var(--white);
   color: var(--title);
   border: 2px solid var(--title);
-  opacity: 0.6;
 }
 
 .btnCountdownActive:not(:disabled):hover {
   background: var(--red);
   color: var(--white);
-  opacity: 1;
   border: 0;
 }
 
