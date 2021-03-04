@@ -6,7 +6,7 @@
 .pnp.js
 
 #directories
-vscode/
+/vscode
 
 # testing
 /coverage

@@ -21,7 +21,7 @@ export default function ExperienceBar() {
           </span>
         </div>
         
-        <div className={styles.pointBar} style={{ left: `${percentToNextLevel - 1.5}% ` }}/>
+        <div className={styles.pointBar} style={{ left: `${percentToNextLevel - 1 }% ` }}/>
       </div>
 
       <span>{xpToNextLevel}xp</span>
