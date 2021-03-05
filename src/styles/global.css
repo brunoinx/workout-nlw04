@@ -34,6 +34,7 @@
 body {
   background: linear-gradient(280.84deg, var(--backgroundRight) 15.86%, var(--backgroundLeft) 85.14%);
   color: var(--title);
+  position: relative;
 }
 
 body,
