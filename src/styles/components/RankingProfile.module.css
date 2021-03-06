@@ -1,0 +1,60 @@
+.container {
+  height: 6.4rem;
+  background: var(--white);
+  border-radius: 0.6rem;
+  margin-bottom: 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .group1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 55%;
+}
+
+.container .group1 > strong {
+  display: block;
+  height: 100%;
+  width: 3rem;
+  margin-left: 1.8rem ;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.container .group1 > div {
+  width: 70%;
+  min-height: 400px;
+  padding-left: 2.6rem;
+  border-left: 4px solid #f0f1f3;
+}
+
+.container .group1 > div > img {
+  height: 70px;
+  width: 70px;
+}
+
+.container .group2 {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin-right: 2rem;
+}
+
+.container .group2 span {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.container .group2 span strong {
+  font-size: 16px;
+  color: var(--blue);
+  text-align: left;
+}

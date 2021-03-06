@@ -6,12 +6,12 @@ import Profile from '../../components/Profile';
 import CompletedChallenges from "../../components/CompletedChallenges";
 import Countdown from "../../components/Contdown";
 import ChallengeBox from "../../components/ChallengeBox";
+import Sidebar from '../../components/Sidebar';
 
 import { CountDownProvider } from '../../contexts/CountdownContext';
 import { ChallengesProvider } from '../../contexts/ChallengesContext';
 
 import styles from "../../styles/pages/Home.module.css";
-import Sidebar from '../../components/Sidebar';
 
 interface HomeProps {
   level: number;

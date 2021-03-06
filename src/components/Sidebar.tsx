@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import styles from '../styles/components/Sidebar.module.css';
 
 export default function Sidebar() {
@@ -22,38 +23,50 @@ export default function Sidebar() {
       <div className={styles.buttonsContainer}>
         {!activeButtonHome
           ? (
-          <button
-              type="button"
-              onClick={handleButtonActiveHome}
-            >
-              <img src="/icons/home.svg" alt="Home" />
-            </button>)
+            <Link href='/home'>
+              <button
+                type="button"
+                onClick={handleButtonActiveHome}
+              >
+                <img src="/icons/home.svg" alt="Home" />
+              </button>
+            </Link>
+          )
           : (
-          <button
-            type="button"
-            style={{ borderLeft: '4px solid var(--blue-dark)'}}
-            onClick={handleButtonActiveHome}
-          >
-            <img src="/icons/home-active.svg" alt="Home" />
-          </button>)
+            <Link href='/home'>
+              <button
+                type="button"
+                style={{ borderLeft: '4px solid var(--blue-dark)'}}
+                onClick={handleButtonActiveHome}
+              >
+                <img src="/icons/home-active.svg" alt="Home" />
+              </button>
+            </Link>
+          )
         }
 
         {!activeButtonRanking
           ? (
-            <button
-              type="button"
-              onClick={handleButtonActiveRanking}
-            >
-              <img src="/icons/award.svg" alt="Ranking" />
-            </button>)
+            <Link href='/ranking'>
+              <button
+                type="button"
+                onClick={handleButtonActiveRanking}
+              >
+                <img src="/icons/award.svg" alt="Ranking" />
+              </button>
+            </Link>
+          )
           : (
-            <button
-              type="button"
-              style={{ borderLeft: '4px solid var(--blue-dark)' }}
-              onClick={handleButtonActiveRanking}
-            >
-            <img src="/icons/award-active.svg" alt="Ranking" />
-          </button>)
+            <Link href='/ranking'>
+              <button
+                type="button"
+                style={{ borderLeft: '4px solid var(--blue-dark)' }}
+                onClick={handleButtonActiveRanking}
+              >
+                <img src="/icons/award-active.svg" alt="Ranking" />
+              </button>
+            </Link>
+          )
         }
       </div>
 

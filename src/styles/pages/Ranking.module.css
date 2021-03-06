@@ -1,0 +1,47 @@
+.container {
+  width: 60%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3.6rem 0;
+  
+  border-radius: 0.8rem;
+  box-shadow: 1px 1px 10 rgba(0, 0, 0, 0.5);
+}
+
+.container h1 {
+  font-size: 2.3rem;
+  line-height: 2.2rem;
+  color: var(--title);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.8rem;
+  margin-bottom: 3.2rem;
+}
+
+.container .legendsRanking {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.container .legendsRanking div:first-child {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  min-width: 13.6rem;
+}
+
+.container .legendsRanking div:last-child {
+  display: flex;
+  justify-content: space-between;
+  width: 34%;
+  min-width: 10.6rem;
+}
+
+.container .legendsRanking > div strong {
+  color: var(--text);
+  text-transform: capitalize;
+  opacity: 0.7;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}

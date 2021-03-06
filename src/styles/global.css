@@ -7,7 +7,7 @@
 :root {
   --white: #fff;
   --backgroundLeft: #f2f3f5;
-  --backgroundRight: #b9c0c7;
+  --backgroundRight: #dfdfdf;
   --gray-line: #dcdde0;
   --text: #666666;
   --text-highlight: #b3b9ff;
@@ -34,7 +34,6 @@
 body {
   background: linear-gradient(280.84deg, var(--backgroundRight) 15.86%, var(--backgroundLeft) 85.14%);
   color: var(--title);
-  position: relative;
 }
 
 body,
