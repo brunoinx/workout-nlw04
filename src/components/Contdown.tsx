@@ -9,7 +9,10 @@ export default function Countdown() {
     seconds, 
     hasFinished,
     isActive,
+    isPause,
     resetCountdown,
+    playCountdown,
+    pauseCountdown,
     startCountdown
   } = useContext(CountdownContext);
 
@@ -18,7 +21,7 @@ export default function Countdown() {
 
   return (
     <div>
-      <div className={styles.countdownContainer}>
+      <div className={`${styles.countdownContainer} ${isPause && styles.pauseCountdown}`}>
         <div>
           <span>{minuteLeft}</span>
           <span>{minuteRight}</span>
@@ -43,13 +46,39 @@ export default function Countdown() {
         : (<>
           { isActive
             ? (
-            <button
-              type='button'
-              className={`${styles.btnCountdown} ${styles.btnCountdownActive}`}
-              onClick={resetCountdown}
-            >
-              Abandonar ciclo
-            </button>)
+              <div className={styles.groupButton}>
+                {!isPause 
+                  ? (
+                    <button
+                      type='button'
+                      className={styles.btnCountdownActive}
+                      onClick={pauseCountdown}
+                    >
+                      Pause
+                      <img src="/icons/pause.svg" alt="Pausar Ciclo" />
+                    </button>)
+                  : (
+                    <button
+                      type='button'
+                      className={styles.btnCountdownActive}
+                      onClick={playCountdown}
+                    >
+                      Play
+                      <img src="/icons/play.svg" alt="Pausar Ciclo" />
+                    </button>
+                  )
+                }
+
+                <button
+                  type='button'
+                  className={styles.btnCountdownActive}
+                  onClick={resetCountdown}
+                >
+                  Stop
+                  <img src="/icons/stop.svg" alt="Resetar Ciclo" />
+                </button>
+              </div>
+            )
             : (
             <button
               type='button'

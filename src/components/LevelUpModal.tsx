@@ -5,10 +5,6 @@ import styles from '../styles/components/LevelUpModal.module.css';
 export default function LevelUpModal() {
   const { level, closeLevelUpModal } = useContext(ChallengesContext);
 
-  function handleCloseModal() {
-
-  }
-
   return (
     <div className={styles.overlay}>
       <div className={styles.container}>

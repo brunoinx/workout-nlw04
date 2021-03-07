@@ -21,6 +21,14 @@
   text-align: center;
 }
 
+@keyframes blinker {
+  to { opacity: 0.2; }
+}
+
+.pauseCountdown span {
+  animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite;
+}
+
 .countdownContainer > div span {
   flex: 1;
 }
@@ -62,16 +70,40 @@
   background: var(--blue-dark);
 }
 
+.groupButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .btnCountdownActive {
+  width: 45%;
+  height: 4.6rem;
+  margin-top: 2rem;
+  border-radius: 6px;
+  border: 0;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+  font-size: 1.2rem;
   background: var(--white);
-  color: var(--title);
-  border: 2px solid var(--title);
+  color: var(--text);
+  border: 2px solid var(--text);
+  transition: background 0.3s;
 }
 
 .btnCountdownActive:not(:disabled):hover {
   background: var(--red);
   color: var(--white);
   border: 0;
+}
+
+.btnCountdownActive img {
+  margin-left: 0.6rem;
+  color: var(--text);
 }
 
 .btnCountdown:disabled {

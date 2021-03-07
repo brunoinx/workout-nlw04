@@ -6,7 +6,10 @@ interface CountdownContextData {
   seconds: number;
   hasFinished: boolean;
   isActive: boolean;
+  isPause: boolean;
   startCountdown: () => void;
+  playCountdown: () => void;
+  pauseCountdown: () => void;
   resetCountdown: () => void;
 }
 
@@ -21,7 +24,8 @@ export function CountDownProvider({ children }: CountdownProviderProps) {
 
   const { startNewChallenge } = useContext(ChallengesContext);
 
-  const [time, setTime] = useState(25 * 60);
+  const [time, setTime] = useState(0.1 * 60);
+  const [isPause, setIsPause] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
 
@@ -30,19 +34,29 @@ export function CountDownProvider({ children }: CountdownProviderProps) {
   
   // lógica do contador
   useEffect(() => {
-    if (isActive && time > 0) {
+    if (isActive && time > 0 && !isPause) {
       countdownTimeout = setTimeout(() => {
         setTime(time - 1)
-      }, 1000)
+      }, 1000);
     } if (isActive && time === 0) {
       setHasFinished(true);
       setIsActive(false);
       startNewChallenge();
     }
-  }, [isActive, time]);
+  }, [isActive, time, isPause]);
 
   function startCountdown() {
     setIsActive(true);
+  }
+
+  const playCountdown = () => {
+    setIsActive(true);
+    setIsPause(false);
+  }
+
+  const pauseCountdown = () => {
+    setIsPause(true);
+    clearTimeout(countdownTimeout);
   }
 
   function resetCountdown() {
@@ -50,6 +64,7 @@ export function CountDownProvider({ children }: CountdownProviderProps) {
     setIsActive(false);
     setHasFinished(false);
     setTime(25 * 60);
+    setIsPause(false);
   }
 
   return (
@@ -59,8 +74,11 @@ export function CountDownProvider({ children }: CountdownProviderProps) {
         seconds,
         hasFinished,
         isActive,
+        isPause,
         startCountdown,
-        resetCountdown,
+        playCountdown,
+        pauseCountdown,
+        resetCountdown
       }}
     >
       {children}

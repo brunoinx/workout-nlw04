@@ -9,9 +9,10 @@ import ChallengeBox from "../../components/ChallengeBox";
 import Sidebar from '../../components/Sidebar';
 
 import { CountDownProvider } from '../../contexts/CountdownContext';
-import { ChallengesProvider } from '../../contexts/ChallengesContext';
+import { ChallengesContext, ChallengesProvider } from '../../contexts/ChallengesContext';
 
 import styles from "../../styles/pages/Home.module.css";
+import { useContext } from 'react';
 
 interface HomeProps {
   level: number;
@@ -20,12 +21,13 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
+  const {} = useContext(ChallengesContext)
 
   return (
     <ChallengesProvider
-    level={props.level}
-    currentExperience={props.currentExperience}
-    challengesCompleted={props.challengesCompleted}
+      level={props.level}
+      currentExperience={props.currentExperience}
+      challengesCompleted={props.challengesCompleted}
     >
 
       <Sidebar />

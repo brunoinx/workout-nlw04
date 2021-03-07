@@ -1,4 +1,3 @@
-import { ChallengesProvider } from '../contexts/ChallengesContext';
 import styles from '../styles/components/RankingProfile.module.css';
 import Profile from './Profile';
 
