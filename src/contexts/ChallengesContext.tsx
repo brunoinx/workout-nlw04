@@ -58,7 +58,7 @@ export function ChallengesProvider({ children, ...rest}:ChallengesProviderProps)
     setLevel(level + 1);
     setIsOpenLevelUpModal(true);
 
-    new Audio('/levelup.mp3').play();
+    new Audio('/sounds/levelup.mp3').play();
   }
 
   function closeLevelUpModal() {
@@ -71,7 +71,7 @@ export function ChallengesProvider({ children, ...rest}:ChallengesProviderProps)
 
     setActiveChallenge(challenge);
 
-    new Audio('/notification.mp3').play();
+    new Audio('/sounds/notification.mp3').play();
 
     if (Notification.permission === 'granted') {
       new Notification('Você tem um novo desafio! 🏋‍♂️️😍️', {

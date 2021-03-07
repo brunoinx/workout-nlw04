@@ -1,0 +1,104 @@
+#body {
+  width: 100%;
+  height: 100vh;
+  background: var(--blue);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftContainer {
+  width: 50%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.leftContainer img {
+  background-size: cover;
+  flex: 0.8;
+}
+
+.rightContainer {
+  width: 40%;
+
+  display: flex;
+  align-items: flex-start;
+  
+}
+
+.rightContainer > div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12rem;
+  margin-left: 5rem;
+}
+
+.rightContainer > div > img {
+  margin-bottom: 8rem;
+}
+
+.rightContainer > div > .groupInfo h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--white);
+
+  margin-bottom: 1.5rem;
+}
+
+.rightContainer > div .groupInfo > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 20rem;
+}
+
+.rightContainer > div .groupInfo > div p {
+  font-size: 1.1rem;
+  line-height: 2rem;
+  color: #B2B9FF;
+  font-weight: 500;
+  margin-left: 1.6rem;
+}
+
+.rightContainer > div .groupInput {
+  margin-top: 1.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.rightContainer > div .groupInput input{
+  height: 76px;
+  width: 320px;
+
+  padding: 0.8rem;
+  color: #f2f3f5;
+  font-size: 1.1rem;
+
+  border-radius: 0.4rem;
+  border: 1px solid var(--blue-dark);
+  background: linear-gradient(80.84deg, var(--blue-dark) 35.86%, var(--blue) 85.14%);
+}
+
+.rightContainer > div .groupInput input::-webkit-input-placeholder {
+  color: var(--gray-line);
+  opacity: 0.8;
+}
+
+.rightContainer > div .groupInput button {
+  height: 76px;
+  width: 68px;
+  background: var(--blue-dark);
+  color: var(--white);
+  border: none;
+  border-radius: 0 0.6rem 0.6rem 0;
+  cursor: pointer;
+
+  transition: opacity 0.3s;
+}
+
+.rightContainer > div .groupInput button:hover {
+  opacity: 0.8;
+}
