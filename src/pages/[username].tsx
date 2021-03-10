@@ -1,35 +1,24 @@
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 
-import ExperienceBar from "../components/ExperienceBar";
 import Profile from '../components/Profile';
-import CompletedChallenges from "../components/CompletedChallenges";
+import Sidebar from '../components/Sidebar';
 import Countdown from "../components/Contdown";
 import ChallengeBox from "../components/ChallengeBox";
-import Sidebar from '../components/Sidebar';
+import ExperienceBar from "../components/ExperienceBar";
+import CompletedChallenges from "../components/CompletedChallenges";
 
-import { useContext } from 'react';
 import { CountDownProvider } from '../contexts/CountdownContext';
-import { ChallengesContext, ChallengesProvider } from '../contexts/ChallengesContext';
-
 import styles from "../styles/pages/Home.module.css";
 
-interface HomeProps {
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
+interface UserGithubProps {
+  name: string;
+  avatar_url: string
 }
 
-export default function Home(props: HomeProps) {
-  const {} = useContext(ChallengesContext)
-
+export default function Home(props: UserGithubProps) {
   return (
-    <ChallengesProvider
-      level={props.level}
-      currentExperience={props.currentExperience}
-      challengesCompleted={props.challengesCompleted}
-    >
-
+    <>
       <Sidebar />
       <div className={styles.container}>
         <Head>
@@ -43,7 +32,7 @@ export default function Home(props: HomeProps) {
         <CountDownProvider>
           <section>
             <div>
-              <Profile />
+              <Profile {...props}/>
               <CompletedChallenges />
               <Countdown />
             </div>
@@ -54,18 +43,19 @@ export default function Home(props: HomeProps) {
           </section>
         </CountDownProvider>
       </div>
-    </ChallengesProvider>
+    </>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { level, currentExperience, challengesCompleted} = ctx.req.cookies;
+  const { username } = ctx.params;
+  const response = await fetch(`https://api.github.com/users/${username}`)
+  const {name, avatar_url} = await response.json();
 
   return {
     props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted)
+      name,
+      avatar_url
     }
   }
 }

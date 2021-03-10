@@ -1,13 +1,18 @@
 import styles from '../styles/components/RankingProfile.module.css';
 import Profile from './Profile';
 
-export default function RankingProfile() {
+interface UserGithubProps {
+  name: string;
+  avatar_url: string
+}
+
+export default function RankingProfile(props: UserGithubProps) {
   return (
     <div className={styles.container}>
       <div className={styles.group1}>
         <strong>1</strong>
 
-        <Profile />
+        <Profile {...props}/>
       </div>
 
       <div className={styles.group2}>

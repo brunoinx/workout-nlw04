@@ -3,7 +3,12 @@ import styles from '../styles/pages/Ranking.module.css';
 import RankingProfile from '../components/RankingProfile';
 import Sidebar from '../components/Sidebar';
 
-export default function Ranking() {
+interface UserGitHubProps {
+  name: string;
+  avatar_url: string;
+}
+
+export default function Ranking(props: UserGitHubProps) {
   return (
     <>
       <Sidebar />
@@ -23,12 +28,9 @@ export default function Ranking() {
           </div>
         </div>
 
-        <RankingProfile />
-        <RankingProfile />
-        <RankingProfile />
-        <RankingProfile />
-        <RankingProfile />
-        <RankingProfile />
+        <RankingProfile {...props}/>
+        <RankingProfile {...props}/>
+        <RankingProfile {...props}/>
       </section>
     </>
   )

@@ -24,7 +24,7 @@ export default function Sidebar() {
       <div className={styles.buttonsContainer}>
         {!activeButtonHome
           ? (
-            <Link href='/home'>
+            <Link href={`/brunoinx`}>
               <button
                 type="button"
                 onClick={handleButtonActiveHome}
@@ -76,7 +76,7 @@ export default function Sidebar() {
           <Image
             src="/icons/log-out.svg"
             alt="Sair da Sessão"
-            width={500}
+            width={24}
             height={24}
           />
         </Link>
