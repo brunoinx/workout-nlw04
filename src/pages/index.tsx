@@ -1,7 +1,7 @@
 
-import styles from '../styles/pages/Login.module.css';
+import styles from '../styles/pages/Session.module.css';
 
-export default function Login() {
+export default function Session() {
   return (
     <div id={styles.body}>
       <section className={styles.leftContainer}>
@@ -17,7 +17,7 @@ export default function Login() {
 
             <div>
               <img src="/icons/github.svg" alt="Entre com o seu github" />
-              <p>Faça login com seu Github para começar</p>
+              <p>Faça login com seu username do github</p>
             </div>
           </div>
 

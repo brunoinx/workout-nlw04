@@ -8,11 +8,11 @@ import Countdown from "../components/Contdown";
 import ChallengeBox from "../components/ChallengeBox";
 import Sidebar from '../components/Sidebar';
 
+import { useContext } from 'react';
 import { CountDownProvider } from '../contexts/CountdownContext';
 import { ChallengesContext, ChallengesProvider } from '../contexts/ChallengesContext';
 
-import styles from "../../styles/pages/Home.module.css";
-import { useContext } from 'react';
+import styles from "../styles/pages/Home.module.css";
 
 interface HomeProps {
   level: number;

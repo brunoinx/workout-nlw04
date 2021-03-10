@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '../styles/components/Sidebar.module.css';
 
 export default function Sidebar() {
@@ -17,8 +18,8 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className={styles.aside}>
-      <img src="logo.svg" alt="Logo da Workout"/>
+    <aside className={styles.aside} >
+      <img src="logo.svg" alt="Logo da Workout" />
 
       <div className={styles.buttonsContainer}>
         {!activeButtonHome
@@ -36,7 +37,7 @@ export default function Sidebar() {
             <Link href='/home'>
               <button
                 type="button"
-                style={{ borderLeft: '4px solid var(--blue-dark)'}}
+                style={{ borderLeft: '4px solid var(--blue-dark)' }}
                 onClick={handleButtonActiveHome}
               >
                 <img src="/icons/home-active.svg" alt="Home" />
@@ -70,7 +71,17 @@ export default function Sidebar() {
         }
       </div>
 
-      <div />
+      <div className={styles.logout}>
+        <Link href="/">
+          <Image
+            src="/icons/log-out.svg"
+            alt="Sair da Sessão"
+            width={500}
+            height={24}
+          />
+        </Link>
+      </div>
+      
     </aside>
   );
 }

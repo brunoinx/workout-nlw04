@@ -1,4 +1,4 @@
-import styles from '../../styles/pages/Ranking.module.css';
+import styles from '../styles/pages/Ranking.module.css';
 
 import RankingProfile from '../components/RankingProfile';
 import Sidebar from '../components/Sidebar';

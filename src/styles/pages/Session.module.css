@@ -74,7 +74,8 @@
   width: 320px;
 
   padding: 0.8rem;
-  color: #f2f3f5;
+  color: #f3f3f3;
+  font-weight: 500;
   font-size: 1.1rem;
 
   border-radius: 0.4rem;
@@ -82,8 +83,13 @@
   background: linear-gradient(80.84deg, var(--blue-dark) 35.86%, var(--blue) 85.14%);
 }
 
+.rightContainer > div .groupInput input:focus-within {
+  background: linear-gradient(80.84deg, var(--backgroundRight) 15.86%, #B2B9FF 95.14%);
+  color: #191919;
+}
+
 .rightContainer > div .groupInput input::-webkit-input-placeholder {
-  color: var(--gray-line);
+  color: #f3f3f3;
   opacity: 0.8;
 }
 
