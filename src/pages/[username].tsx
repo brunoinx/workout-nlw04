@@ -1,15 +1,15 @@
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 
-import ExperienceBar from "../../components/ExperienceBar";
-import Profile from '../../components/Profile';
-import CompletedChallenges from "../../components/CompletedChallenges";
-import Countdown from "../../components/Contdown";
-import ChallengeBox from "../../components/ChallengeBox";
-import Sidebar from '../../components/Sidebar';
+import ExperienceBar from "../components/ExperienceBar";
+import Profile from '../components/Profile';
+import CompletedChallenges from "../components/CompletedChallenges";
+import Countdown from "../components/Contdown";
+import ChallengeBox from "../components/ChallengeBox";
+import Sidebar from '../components/Sidebar';
 
-import { CountDownProvider } from '../../contexts/CountdownContext';
-import { ChallengesContext, ChallengesProvider } from '../../contexts/ChallengesContext';
+import { CountDownProvider } from '../contexts/CountdownContext';
+import { ChallengesContext, ChallengesProvider } from '../contexts/ChallengesContext';
 
 import styles from "../../styles/pages/Home.module.css";
 import { useContext } from 'react';

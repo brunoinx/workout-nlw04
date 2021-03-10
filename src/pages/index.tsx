@@ -1,4 +1,4 @@
-import Link from 'next/link';
+
 import styles from '../styles/pages/Login.module.css';
 
 export default function Login() {
@@ -24,11 +24,9 @@ export default function Login() {
           <div className={styles.groupInput}>
             <input type="text" placeholder="Digite seu username" />
 
-            <Link href="/home">
-              <button type="submit">
-                <img src="/icons/arrow-left.svg" alt="Entrar" />
-              </button>
-            </Link>
+            <button type="submit">
+              <img src="/icons/arrow-left.svg" alt="Entrar" />
+            </button>
           </div>
 
         </div>
